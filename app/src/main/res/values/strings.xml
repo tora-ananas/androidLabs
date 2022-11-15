@@ -3,4 +3,17 @@
     <string name="red">RED</string>
     <string name="orange">ORANGE</string>
     <string name="green">GREEN</string>
+    <string name="about_text">
+        Я очень воспитанный <b>кот</b>,\n
+        Но есть лишь одно отступленье:\n
+        Мне <i>рыбку</i> никто не даёт,\n
+        А это уже преступленье!\n
+        Глотаю тихонько слюну,\n
+        И медленно запах вдыхаю…\n
+        И <i>рыбку</i> всего лишь одну -\n
+        Вот эту! - я скушать мечтаю!\n
+    </string>
+    <string name="about_title">
+        О котиках!
+    </string>
 </resources>

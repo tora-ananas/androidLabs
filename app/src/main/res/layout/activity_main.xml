@@ -5,84 +5,88 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@color/purple_200"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="290dp"
-        android:layout_height="530dp"
+        android:id="@+id/imageView8"
+        android:layout_width="162dp"
+        android:layout_height="217dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/cat1" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="148dp"
+        android:layout_height="184dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/robot" />
+        app:srcCompat="@drawable/cat2" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="186dp"
+        android:layout_height="195dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat3" />
+
+    <ImageView
+        android:id="@+id/image_bottom"
+        android:layout_width="144dp"
+        android:layout_height="175dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/cat4" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/red"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="#FFEB3B"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/text_first"
+        android:layout_width="272dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="128dp"
+        android:background="@color/white"
+        android:text="А вы рыбов продаете?"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.218" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="247dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Введите имя"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Red"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
-
-    <Button
-        android:id="@+id/button_orange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Orange"
-        android:textColor="#212121"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/text_second"
+        android:layout_width="321dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="196dp"
+        android:background="@color/white"
+        android:text="Нет, только показываем"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.875" />
 
-    <Button
-        android:id="@+id/button_green"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Green"
-        android:textColor="#263238"
+    <TextView
+        android:id="@+id/text_third"
+        android:layout_width="151dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:text="Красивое"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_bottom"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799" />
+        app:layout_constraintVertical_bias="0.657" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

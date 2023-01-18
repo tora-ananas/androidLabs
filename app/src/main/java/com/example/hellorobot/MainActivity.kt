@@ -1,16 +1,12 @@
 package com.example.hellorobot
 
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.annotation.RequiresApi
-import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,31 +14,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val firstText: TextView = findViewById(R.id.text_first)
-        val secondText: TextView = findViewById(R.id.text_second)
-        val thirdText: TextView = findViewById(R.id.text_third)
-        val bottomImage: ImageView = findViewById(R.id.image_bottom)
-        val clickImage: ImageView = findViewById(R.id.imageView10)
-
-        bottomImage.setOnClickListener {
-            val phrases = listOf(
-                "Рыбов хочется",
-                "Вставай, нам нужны рыбы",
-                "Продайте рыбов",
-                "Рыбы рыбы",
-                "Наташ, мы все рыбы уронили!")
-
-            val shuffledList = phrases.shuffled()
-
-            firstText.text = shuffledList[0]
-            secondText.text = shuffledList[1]
-            thirdText.text = shuffledList[2]
-        }
+        val enterText: EditText = findViewById(R.id.editText_enterId)
+        val clickImage: ImageView = findViewById(R.id.imageView_connect)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         clickImage.setOnClickListener {
-            val intent = Intent(this@MainActivity, AboutActivity::class.java)
-            startActivity(intent)
-        }
+            //10.0.2.2
+            Connection.mHost = enterText.text.toString()
+            Connection.camHost = enterText.text.toString()
+            enterText.setText(Connection.mHost)
+            Connection.mPort =  8080
+            Connection.camPort = 8081
 
+            val thread = Thread {
+                val res = Connection.openConnection()
+                Connection.outBuf!!.write("SQUIRREL\n")
+                Connection.outBuf!!.flush()
+                if (res) {
+                    Log.d("Connection true","catch res")
+                    runOnUiThread {
+                        val intent = Intent(this@MainActivity, ControlActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+            thread.start()
+        }
     }
 }
